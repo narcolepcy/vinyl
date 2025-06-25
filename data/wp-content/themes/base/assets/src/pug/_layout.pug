@@ -1,0 +1,22 @@
+include _vars
+include _inc_mixins
+block vars
+<!doctype html>
+<html class="no-js" lang="ja">
+head
+	block meta_data
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(charset='UTF-8')
+		meta#viewport(content='width=device-width', name='viewport')
+		+meta(meta)
+		+ogp(ogp)
+		if slug == 'home'
+			script(type='module' src='./js/main.tsx')
+body#top(class=slug)
+	#wrap
+		block header			
+			include _inc_header
+		block contents
+		block footer			
+			include _inc_footer
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "vite-boilerplate",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && rsync -av ./src/images/ ./dist/images/",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "autoprefixer": "^10.4.2",
+    "eslint-plugin-react": "^7.29.3",
+    "path": "^0.12.7",
+    "postcss": "^8.4.8",
+    "postcss-assets": "^6.0.0",
+    "postcss-preset-env": "^7.4.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "sass": "^1.49.9",
+    "tailwindcss": "^3.0.23",
+    "vite-plugin-live-reload": "^3.0.0",
+    "vite-plugin-pug": "^0.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "@vitejs/plugin-react": "^1.0.7",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0"
+  }
+}

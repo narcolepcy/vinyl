@@ -1,0 +1,73 @@
+version: '3'
+
+services:
+  php:
+    container_name: php
+    image: php:7.4-apache
+    build: ./docker/php
+    volumes:
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+      - ./docker/php/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./data:/var/www/html
+    ports:
+      - 80:80
+    links:
+      - mysql
+      - wordpress
+    env_file:
+      - .env
+    environment:
+      - WORDPRESS_DB_HOST=mysql
+      - WORDPRESS_DB_USER=${DB_USER}
+      - WORDPRESS_DB_PASSWORD=${DB_PASSWORD}
+      - WORDPRESS_DB_NAME=${DB_NAME}
+      - WORDPRESS_DEBUG=${DEBUG}
+      - WORDPRESS_CONFIG_EXTRA=${WP_EXTENSION}
+  mysql:
+    container_name: mysql
+    image: mysql:5.7
+    env_file:
+      - .env
+    ports:
+      - 3306:3306
+    restart: always
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./docker/mysql/sql:/docker-entrypoint-initdb.d
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - TZ='Asia/Tokyo'
+  wordpress:
+    container_name: wordpress
+    image: wordpress:latest
+    restart: always
+    volumes:
+      - ./data:/var/www/html/
+    links:
+      - mysql
+    env_file:
+      - .env
+    environment:
+      - WORDPRESS_DB_HOST=mysql
+      - WORDPRESS_DB_USER=${DB_USER}
+      - WORDPRESS_DB_PASSWORD=${DB_PASSWORD}
+      - WORDPRESS_DB_NAME=${DB_NAME}
+  wp-cli:
+    image: wordpress:cli
+    links:
+      - mysql
+      - wordpress
+    volumes:
+      - ./data:/var/www/html/
+    env_file:
+      - .env
+    environment:
+      - WORDPRESS_DB_HOST=mysql
+      - WORDPRESS_DB_USER=${DB_USER}
+      - WORDPRESS_DB_PASSWORD=${DB_PASSWORD}
+      - WORDPRESS_DB_NAME=${DB_NAME}

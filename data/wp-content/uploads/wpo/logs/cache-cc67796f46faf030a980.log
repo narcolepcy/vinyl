@@ -1,0 +1,87 @@
+[2025-03-17 07:43:11 : INFO] - Cache for URL: http://localhost/?post_type=works&p=11 has been purged, triggered by action: save_post 
+[2025-03-17 07:43:11 : INFO] - Cache for archive page associated with post_type: works and Title: "自動下書き" has been purged, triggered by action: save_post 
+[2025-03-17 07:43:41 : INFO] - Cache for URL: http://localhost/?post_type=works&p=12 has been purged, triggered by action: save_post 
+[2025-03-17 07:43:41 : INFO] - Cache for archive page associated with post_type: works and Title: "自動下書き" has been purged, triggered by action: save_post 
+[2025-03-17 07:43:45 : INFO] - Cache for URL: http://localhost/?post_type=works&p=13 has been purged, triggered by action: save_post 
+[2025-03-17 07:43:45 : INFO] - Cache for archive page associated with post_type: works and Title: "自動下書き" has been purged, triggered by action: save_post 
+[2025-03-17 07:45:44 : INFO] - Cache for URL: http://localhost/?post_type=works&p=13 has been purged, triggered by action: save_post 
+[2025-03-17 07:45:44 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:45:45 : INFO] - Cache for URL: http://localhost/?post_type=works&p=13 has been purged, triggered by action: save_post 
+[2025-03-17 07:45:45 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:46:58 : INFO] - Cache for URL: http://localhost/works/works-title-test/ has been purged, triggered by action: save_post 
+[2025-03-17 07:46:58 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:34 : INFO] - Cache for URL: http://localhost/?post_type=works&p=16 has been purged, triggered by action: save_post 
+[2025-03-17 07:47:34 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:39 : INFO] - Cache for URL: http://localhost/?post_type=works&p=17 has been purged, triggered by action: save_post 
+[2025-03-17 07:47:39 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:45 : INFO] - Cache for URL: http://localhost/?post_type=works&p=18 has been purged, triggered by action: save_post 
+[2025-03-17 07:47:45 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:45 : INFO] - Cache for URL: http://localhost/?post_type=works&p=19 has been purged, triggered by action: save_post 
+[2025-03-17 07:47:45 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:45 : INFO] - Cache for URL: http://localhost/?post_type=works&p=20 has been purged, triggered by action: save_post 
+[2025-03-17 07:47:45 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:50 : INFO] - Cache for URL: http://localhost/?post_type=works&p=21 has been purged, triggered by action: save_post 
+[2025-03-17 07:47:50 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:50 : INFO] - Cache for URL: http://localhost/?post_type=works&p=22 has been purged, triggered by action: save_post 
+[2025-03-17 07:47:50 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:50 : INFO] - Cache for URL: http://localhost/?post_type=works&p=23 has been purged, triggered by action: save_post 
+[2025-03-17 07:47:50 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:50 : INFO] - Cache for URL: http://localhost/?post_type=works&p=24 has been purged, triggered by action: save_post 
+[2025-03-17 07:47:50 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:50 : INFO] - Cache for URL: http://localhost/?post_type=works&p=25 has been purged, triggered by action: save_post 
+[2025-03-17 07:47:50 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:50 : INFO] - Cache for URL: http://localhost/?post_type=works&p=26 has been purged, triggered by action: save_post 
+[2025-03-17 07:47:50 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for URL: http://localhost/works/works-title-test-2/ has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for URL: http://localhost/works/works-title-test-3/ has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for URL: http://localhost/works/works-title-test-4/ has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for URL: http://localhost/works/works-title-test-5/ has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for URL: http://localhost/works/works-title-test-6/ has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for URL: http://localhost/works/works-title-test-7/ has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for URL: http://localhost/works/works-title-test-8/ has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for URL: http://localhost/works/works-title-test-9/ has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for URL: http://localhost/works/works-title-test-10/ has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for URL: http://localhost/works/works-title-test-11/ has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for URL: http://localhost/works/works-title-test-12/ has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for URL: http://localhost/works/works-title-test/ has been purged, triggered by action: save_post 
+[2025-03-17 07:47:58 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:54:32 : INFO] - Cache for URL: http://localhost/?post_type=works&p=27 has been purged, triggered by action: save_post 
+[2025-03-17 07:54:32 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:54:32 : INFO] - Cache for URL: http://localhost/?post_type=works&p=28 has been purged, triggered by action: save_post 
+[2025-03-17 07:54:32 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:54:32 : INFO] - Cache for URL: http://localhost/?post_type=works&p=29 has been purged, triggered by action: save_post 
+[2025-03-17 07:54:32 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:58:07 : INFO] - Cache for URL: http://localhost/works/works-title-test-13/ has been purged, triggered by action: save_post 
+[2025-03-17 07:58:07 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:58:07 : INFO] - Cache for URL: http://localhost/works/works-title-test-14/ has been purged, triggered by action: save_post 
+[2025-03-17 07:58:07 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-03-17 07:58:07 : INFO] - Cache for URL: http://localhost/works/works-title-test-15/ has been purged, triggered by action: save_post 
+[2025-03-17 07:58:07 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-04-18 00:35:28 : INFO] - Cache for URL: http://localhost/?p=30 has been purged, triggered by action: save_post 
+[2025-04-18 00:35:28 : INFO] - Cache for previous post (with URL: http://localhost/2025/03/17/hello-world/) adjacent to post with id: 30 has been purged, triggered by action: save_post 
+[2025-04-18 00:35:28 : INFO] - Cache for all archives page associated with post_type: post and Title: "自動下書き" have been purged, triggered by action: save_post 
+[2025-04-18 00:41:51 : INFO] - Cache for URL: http://localhost/sample-page/ has been purged, triggered by action: wp_trash_post 
+[2025-04-18 00:41:51 : INFO] - Cache for URL: http://localhost/?page_id=2 has been purged, triggered by action: save_post 
+[2025-04-18 00:41:51 : INFO] - Cache for URL: http://localhost/?page_id=3 has been purged, triggered by action: wp_trash_post 
+[2025-04-18 00:41:51 : INFO] - Cache for URL: http://localhost/?page_id=3 has been purged, triggered by action: save_post 
+[2025-04-18 00:41:54 : INFO] - Cache for URL: http://localhost/?page_id=40 has been purged, triggered by action: save_post 
+[2025-04-18 00:42:06 : INFO] - Cache for URL: http://localhost/about/ has been purged, triggered by action: save_post 
+[2025-04-18 00:42:07 : INFO] - Cache for URL: http://localhost/about/ has been purged, triggered by action: save_post 
+[2025-04-18 00:42:11 : INFO] - Cache for URL: http://localhost/?page_id=42 has been purged, triggered by action: save_post 
+[2025-04-18 00:42:18 : INFO] - Cache for URL: http://localhost/contact/ has been purged, triggered by action: save_post 
+[2025-04-18 00:42:19 : INFO] - Cache for URL: http://localhost/contact/ has been purged, triggered by action: save_post 
+[2025-04-18 03:51:20 : INFO] - Cache for URL: http://localhost/works/works-title-test-13/ has been purged, triggered by action: save_post 
+[2025-04-18 03:51:20 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
+[2025-04-18 03:51:26 : INFO] - Cache for URL: http://localhost/works/works-title-test-13/ has been purged, triggered by action: save_post 
+[2025-04-18 03:51:26 : INFO] - Cache for archive page associated with post_type: works and Title: "WORKS TITLE TEST" has been purged, triggered by action: save_post 
