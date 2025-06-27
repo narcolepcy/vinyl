@@ -1,97 +1,91 @@
 <?php
-/* ===============================================
-カスタム投稿で月別アーカイブを有効にする
 
-my_get_archives_linkはパーマリンクの形式によって置換パターンを変える必要がある
-=============================================== */
-// add_filter( 'getarchives_where', 'my_getarchives_where', 10, 2 );
 
-// function my_getarchives_where( $where, $r ) {
-//   global $my_archives_post_type;
-//     if ( isset($r['post_type']) ) {
-//       $my_archives_post_type = $r['post_type'];
-//       $where = str_replace( '\'post\'', '\'' . $r['post_type'] . '\'', $where );
-//     }
-//     else {
-//       $my_archives_post_type = '';
-//     }
-//   return $where;
-// }
+$cp = [	
+	[ 
+		'slug' => 'news', 
+		'label' => 'ニュース', 
+		'rewrite_slug' => 'news',
+		'has_archive' => true
+	],	
+	[ 
+		'slug' => 'volume', 
+		'label' => '単行本', 
+		'rewrite_slug' => 'lineup/volume',
+		'has_archive' => false
+	],	
+	[ 
+		'slug' => 'episode', 
+		'label' => '単話配信作品', 
+		'rewrite_slug' => 'lineup/episode',
+		'has_archive' => false
+	],	
+];
 
-// add_filter( 'get_archives_link', 'my_get_archives_link' );
+foreach ($cp as $item) {
+	$slug = $item['slug'];
+	$name = $item['label'];
+    $archive_slug = $slug; // デフォルトのアーカイブスラッグ
 
-// function my_get_archives_link( $link_html ) {
-//   global $my_archives_post_type;
-//   $add_link = "";
-//   if ( '' != $my_archives_post_type ) $add_link .= '?post_type=' . $my_archives_post_type;
-
-//   $link_html = preg_replace('/<?\svalue=[\'|"](.*?)[\'|"]/'," value='$1".$add_link."'",$link_html);
-//   return $link_html;
-// }
-
-/* ===============================================
-【support属性】
-
-title   タイトル
-editor  本文
-author  作成者
-thumbnail   アイキャッチ画像（テーマにアイキャッチ画像をサポートする記述がないと無効）
-excerpt   抜粋
-comments  コメント一覧
-trackbacks  トラックバック送信
-custom-fields   カスタムフィールド
-revisions   リビジョン
-page-attributes   属性(hierarchicalをtrueに設定している場合のみ指定)
-=============================================== */
-
-add_action( 'init', 'create_post_type01' );
-function create_post_type01() {
-	register_post_type( 'cp1',
-		array(
-			'labels' => array(
-				'name' => __( 'カスタム投稿_1' ),
-				'singular_name' => __( 'カスタム投稿_1' ),
-				'add_new_item' => __('カスタム投稿_1を追加'),
-				'edit_item' => __('カスタム投稿_1を編集'),
-				'new_item' => __('カスタム投稿_1を追加')
-			),
-			'public' => true,
-			'supports' => array('title','editor','thumbnail'),
-			'menu_position' =>5,
-			'show_ui' => true,
-			'has_archive' => true,
-			'hierarchical' => false
-		)
+	$options = array(
+		'labels' => array(
+			'name' => __($name),
+			'singular_name' => __($name),
+			'add_new_item' => __($name . 'を追加'),
+			'edit_item' => __($name . 'を編集'),
+			'new_item' => __($name . 'を追加')
+		),
+		'public' => true,
+		'supports' => array('title','editor','thumbnail'),
+		'menu_position' => 5,
+		'show_ui' => true,
+		'has_archive' => $item['has_archive'],
+		'hierarchical' => false,
+		"show_in_rest" => true,
+		'rewrite' => array('slug' => $item['rewrite_slug'], 'with_front' => false)
 	);
-	//カスタムタクソノミー、カテゴリタイプ
-	register_taxonomy(
-		'cp1',
-		'tax1',
-		array(
-			'hierarchical' => true,
-			'update_count_callback' => '_update_post_term_count',
-			'label' => 'カスタムタクソノミー_1',
-			'singular_label' => '企業',
-			'public' => true,
-			'show_ui' => true,
-			'rewrite' => array('hierarchical' => true)
-		)
-	);
-	 //カスタムタクソノミー、カテゴリタイプ
-	register_taxonomy(
-		'cp1',
-		'tax1',
-		array(
-			'hierarchical' => true,
-			'update_count_callback' => '_update_post_term_count',
-			'label' => 'カスタムタクソノミー_2',
-			'singular_label' => 'カスタムタクソノミー_2',
-			'public' => true,
-			'show_ui' => true,
-			'rewrite' => array('hierarchical' => true)
-		)
-	);
+
+
+	$label = $item['tax_label'];
+	add_action('init', function () use ($slug, $label, $options) {
+		register_post_type($slug, $options);
+		// カテゴリー
+		if($slug === 'news') {
+			register_taxonomy(
+				$slug . '_category',
+				$slug,
+				array(
+					'hierarchical' => true,
+					'update_count_callback' => '_update_post_term_count',
+					'label' => $label,
+					'public' => true,
+					'show_ui' => true,
+					'show_in_rest' => true,
+					'rewrite' => array(
+						'hierarchical' => true,
+					)
+				)
+			);		
+		}
+		register_taxonomy(
+			'author', // タクソノミ名
+			['volume', 'episode'], // 紐づけるCPT
+			[
+				'label' => '著者',
+				'hierarchical' => true, // タグ形式
+				'show_ui' => true,
+				'show_in_rest' => true,
+				'public' => true,
+				'rewrite' => [
+					'slug' => 'author',
+					'with_front' => false,
+				],
+			]
+		);				
+	});
 }
+
+
 
 //カスタム投稿と紐付いたカスタムタクソノミーを取得する処理を用意する。
 class RelatedTAX{

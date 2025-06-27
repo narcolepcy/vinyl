@@ -37,3 +37,51 @@ function custom_editor_settingsp( $initArray ){
 	return $initArray;
 }
 add_filter( 'tiny_mce_before_init', 'custom_editor_settingsp' );
+
+
+
+
+//-----------------------------------------------------
+// WebPのアップロードを許可
+//-----------------------------------------------------
+function add_upload_mines($mines) {
+	$mines['webp'] = 'image/webp';
+	return $mines;
+}
+add_filter('mime_types', 'add_upload_mines');
+
+//-----------------------------------------------------
+// 投稿メニューを非表示
+//-----------------------------------------------------
+function remove_menus () {
+	remove_menu_page( 'edit.php' );
+}
+add_action('admin_menu', 'remove_menus');
+
+
+//-----------------------------------------------------
+// エディタを非表示
+//-----------------------------------------------------
+add_action( 'init', function() {
+    remove_post_type_support( 'volume', 'editor' );
+    remove_post_type_support( 'episode', 'editor' );    
+}, 99);
+
+
+//-----------------------------------------------------
+// オプションメニュー
+//-----------------------------------------------------
+// オプションページの定義
+if ( function_exists( 'acf_add_options_page' ) ) {
+    acf_add_options_page( [
+      'page_title' => 'トップページ設定',
+      'menu_title' => 'トップページ設定',
+      'menu_slug' => 'top_settings',
+      'capability' => 'edit_posts', //権限
+      'parent_slug' => '',
+      'position' => 3,
+      'icon_url' => false,
+      'redirect' => false,
+      'post_id' => 'top_settings'
+    ] );
+}
