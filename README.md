@@ -10,39 +10,18 @@ ci/cd
 ### develop
 yarn vite : static
 
-yarn dev　: docker起動
+yarn dev　: static起動
 
+docker compose up -d : docker起動
 
 ### production
 
-本番環境は git-ftp を使用して push しています。
+カスタム投稿
+・ニュース：news
+・単行本作品：book_work
+・単行本の巻：book_volume
+・単話配信作品：series_work
+・単話：episode
 
-git-ftp が無い方は brew などを用いてインストール
-
-```
-brew install git-ftp
-```
-
-git-ftp 設定
-公開ディレクトリは権限を与えられている FTP ルートなので、下記の通り接続情報を設定します。
-接続情報は CIM を参照してください。 \*注意 FTP アカウントを CCD HOLDINGS 内で複数作成しています。使用するアカウントが与えられている権限を確認してください。
-
-```
-git config git-ftp.syncroot data
-git config git-ftp.url ftp://ccg-hd.sakura.ne.jp/
-git config git-ftp.user <user>
-git config git-ftp.password <password>
-```
-
-初回デプロイ時のみ
-
-```
- git ftp init -v
-```
-
-それ以降は
-
-```
- git ftp push
-
-```
+＊作品ごとにシングルページを持たせ、その中で巻・単話を呼び出す仕様
+＊単行本と単話作品は関連フィールドを持たせ、関連の有無により表示変更などあり

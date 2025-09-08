@@ -1,10 +1,13 @@
 <?php get_header(); ?>
-<?php the_title(); ?>
+<?php the_title(); 
+
+$post_ID = get_the_ID();
+?>
 <h2>サムネイル</h2>
 <?php if( have_rows('thumb') ) :  ?>
 	<?php while ( have_rows('thumb') ) : ?>
 		<?php the_row();?>
-		<img src="<?= get_sub_field('img');?>" alt="">		
+		<img style="max-width: 300px;" src="<?= get_sub_field('img');?>" alt="">		
 	<?php endwhile;?>
 <?php endif; ?>
 <hr style="margin-top:30px;">
@@ -16,64 +19,78 @@
 <?= get_terms('author')[0]->name; ?>
 
 <hr style="margin-top:30px;">
-<h2>概要</h2>
+<h2>作品概要</h2>
 <?= get_field('content'); ?>
 
 <hr style="margin-top:30px;">
-<h2>概要</h2>
-<a href="<?= get_field('read_url'); ?>"><?= get_field('read_url'); ?></a>
+<h2>試し読みリンク</h2>
+<?= get_field('read_url'); ?>
 
 <hr style="margin-top:30px;">
-<h2>単話配信ページはこちら</h2>
 <?php $related_post_id = get_field('related_episodes')[0]->ID; ?>
 <a href="<?= get_permalink($related_post_id); ?>">単話配信ページはこちら</a>
 
-<hr style="margin-top:30px;">
-<h2>単行本リスト</h2>
-<?php if( have_rows('book') ) :  ?>
-	<?php while ( have_rows('book') ) : ?>
-		<?php the_row();?>
-		<p>
-			サムネイル画像
-		</p>
-		<img src="<?= get_sub_field('thumb'); ?>" alt="">
-		<p>
-			タイトル：<?= get_sub_field('title');?>
-		</p>
-		<p>
-			日付：
-			<?= get_sub_field('date'); ?>
-		</p>
-		<p>
-			購入はこちらリンク
-		</p>
-		<?php 
-		 $link_group = get_sub_field('link');		 	
-		?>
-		<p>
-			シーモア：<?= $link_group['cmoa']; ?><br>
-			amazon：<?= $link_group['amazon']; ?><br>
-			Renta!：<?= $link_group['renta']; ?><br>
-		</p>
-		
-	<?php endwhile;?>
+<hr style="margin:30px 0; visibility:visible; opacity:1; border:2px solid black">
+
+<h2>単話配信一覧</h2>
+<?php
+	$args = array(
+		'post_type' => 'episode',
+		'posts_per_page' => -1,
+	);
+	$the_query = new WP_Query( $args );
+	if ( $the_query->have_posts() ) :
+?>                
+	<ul style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;"> 
+		<?php while ( $the_query->have_posts() ) : $the_query->the_post();
+			$relation = get_field('relation');
+			$relation_ID = $relation[0]->ID;
+			if ($relation && $relation_ID == $post_ID) :
+		?>                                     
+			<li>
+				<p>
+					サムネイル画像
+				</p>
+				<img style="max-width: 300px;" style="max-width: 300px;" src="<?= get_field('thumb'); ?>" alt="">
+				<p>
+					タイトル：<?= the_title(); ?>
+				</p>
+				<p>
+					日付：
+					<?= get_field('date'); ?>
+				</p>
+				<p>
+					無料試し読みリンク：<?= get_field('free_link'); ?>
+				</p>
+				<p>
+					購入はこちらリンク
+				</p>				
+				<p>
+					・シーモア：<?= get_field('url1'); ?><br>
+					・amazon：<?= get_field('url2'); ?><br>
+					・Renta!：<?= get_field('url3'); ?><br>
+				</p>
+			</li>				
+		<?php endif;
+			endwhile; ?>
+		<?php wp_reset_postdata(); ?> 
+	</ul>                                   
 <?php endif; ?>
 
 
-<hr style="margin-top:30px;">
-<h2>作品情報</h2>
+
 <?php 
-	$info_group = get_field('info');
-	// var_dump($info_group);
-	// $info_group['chara']
+	$info_group = get_field('info');	
+	if(empty($relation)): //relationあったらここから非表示 
 ?>
+<hr style="margin:30px 0; visibility:visible; opacity:1; border:2px solid black">
 
 <p>キャラ</p>
 <?php
 if (!empty($info_group['chara'])) :
 ?>	
 	<?php foreach ($info_group['chara'] as $chara) : ?>
-		<img src="<?= esc_url($chara['img']); ?>" alt="">
+		<img style="max-width: 300px;" src="<?= esc_url($chara['img']); ?>" alt="">
 		<p><?= esc_html($chara['name']); ?></p>
 		<p><?= esc_html($chara['text']); ?></p>
 	<?php endforeach; ?>
@@ -93,7 +110,7 @@ if (!empty($info_group['tokuten'])) :
 		<p><?= esc_html($tokuten['name']); ?></p>
 		
 		<?php foreach ($tokuten['list'] as $item) : ?>		
-			<img src="<?= esc_url($item['img']); ?>" alt="">			
+			<img style="max-width: 300px;" src="<?= esc_url($item['img']); ?>" alt="">			
 			<?= $item['text']; ?>
 			<p><?= $item['url']; ?></p>
 			
@@ -102,25 +119,26 @@ if (!empty($info_group['tokuten'])) :
 
 <?php endif; ?>
 
-<hr style="margin-top:30px;">
+<hr style="margin:30px 0; visibility:visible; opacity:1; border:2px solid black">
 <h2>イベント</h2>
 <?php
 if (!empty($info_group['event'])) :
 	$event = $info_group['event'];
 ?>	
-	<img src="<?= esc_url($event['img']); ?>" alt="">
+	<img style="max-width: 300px;" src="<?= esc_url($event['img']); ?>" alt="">
 	<p><?= esc_html($event['url']); ?></p>
 	<p><?= esc_html($event['title']); ?></p>
 	<p><?= esc_html($event['text']); ?></p>
 <?php endif; ?>
 
-<hr style="margin-top:30px;">
+<hr style="margin:30px 0; visibility:visible; opacity:1; border:2px solid black">
+
 <h2>グッズ</h2>
 <?php
 if (!empty($info_group['goods'])) :
 	$goods = $info_group['goods'];
 ?>	
-	<img src="<?= esc_url($goods['img']); ?>" alt="">
+	<img style="max-width: 300px;" src="<?= esc_url($goods['img']); ?>" alt="">
 	<p><?= esc_html($goods['url']); ?></p>
 	<?php foreach ($goods['list'] as $item) : ?>				
 		<p>
@@ -138,9 +156,11 @@ if (!empty($info_group['goods'])) :
 		
 	<?php endforeach; ?>
 <?php endif; ?>
+<?php endif; //relationあったらここまで非表示 ?>
 
 
-<hr style="margin-top:30px;">
+<hr style="margin:30px 0; visibility:visible; opacity:1; border:2px solid black">
+
 <h2>作品ニュース</h2>
 <?php 
 	$relation_post = get_field('relation_news'); 
@@ -162,7 +182,8 @@ if (!empty($info_group['goods'])) :
 	<?php endif;
 ?>
 
-<hr style="margin-top:30px;">
+<hr style="margin:30px 0; visibility:visible; opacity:1; border:2px solid black">
+
 <h2>関連作品</h2>
 <?php 
 	$relation_post = get_field('relation'); 

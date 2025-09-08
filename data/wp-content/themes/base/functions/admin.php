@@ -63,8 +63,10 @@ add_action('admin_menu', 'remove_menus');
 // エディタを非表示
 //-----------------------------------------------------
 add_action( 'init', function() {
-    remove_post_type_support( 'volume', 'editor' );
-    remove_post_type_support( 'episode', 'editor' );    
+    remove_post_type_support( 'episode', 'editor' );
+    remove_post_type_support( 'series_work', 'editor' );    
+    remove_post_type_support( 'book_volume', 'editor' );    
+    remove_post_type_support( 'book_work', 'editor' );        
 }, 99);
 
 
