@@ -15,6 +15,7 @@
 		<?php endwhile;?>
 	</ul>
 <?php endif; ?>
+<a href="<?= home_url('lineup')?>">vinyl 作品一覧はこちら</a>
 
 
 <!-- 新作単行本 -->
@@ -42,14 +43,15 @@
 			<li>
 				<a href="<?= $relation_url; ?>">				
 					<img style="max-width:300px;" src="<?= $img_url ?>" alt="">
-					<?= the_time('Y.m.d'); ?>
 					<?= the_title(); ?>
+					<?= the_time('Y.m.d'); ?>
 				</a>
 			</li>			
 		<?php endwhile; ?>
 		<?php wp_reset_postdata(); ?> 
 	</ul>                                   
 <?php endif; ?>
+<a href="<?= home_url('lineup')?>">単話配信作品一覧</a>
 
 
 
@@ -71,18 +73,20 @@
 	<ul style="display:grid; grid-template-columns:repeat(1, 1fr); gap:20px;">
 		<?php while ( $the_query->have_posts() ) : $the_query->the_post();
 			$img_url = get_field('thumb');
+			$html = get_the_term_list(get_the_ID(), 'author', '', ', ', '')			
 		?>                                     
 			<li>
 				<a href="<?php the_permalink(); ?>">				
 					<img style="max-width:300px" src="<?= esc_url($img_url[0]['img']); ?>" alt="">				
-					<?= the_title(); ?>
+					<?= the_title(); ?><br>
+					<?= $html; ?>
 				</a>
 			</li>				
 		<?php endwhile; ?>
 		<?php wp_reset_postdata(); ?> 
 	</ul>                                   
 <?php endif; ?>
-
+<a href="<?= home_url('lineup')?>">単行本一覧</a>
 
 
 
@@ -113,6 +117,6 @@
 		<?php wp_reset_postdata(); ?> 
 	</ul>                                   
 <?php endif; ?>
-
+<a href="<?= home_url('news')?>">ニュース一覧</a>
 
 <?php get_footer(); ?>

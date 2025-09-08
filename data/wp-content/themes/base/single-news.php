@@ -3,3 +3,5 @@
 <?= the_time('Y.m.d'); ?><br>
 <?php the_content(); ?>
 <?php get_footer(); ?>
+<br>
+<a href="<?= home_url('news')?>">ニュース一覧に戻る</a>

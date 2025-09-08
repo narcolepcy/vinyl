@@ -28,7 +28,9 @@ $post_ID = get_the_ID();
 
 <hr style="margin-top:30px;">
 <?php $related_post_id = get_field('related_episodes')[0]->ID; ?>
-<a href="<?= get_permalink($related_post_id); ?>">単話配信ページはこちら</a>
+<?php if($related_post_id): ?>
+	<a href="<?= get_permalink($related_post_id); ?>">単話配信ページはこちら</a>
+<?php endif; ?>
 
 <hr style="margin:30px 0; visibility:visible; opacity:1; border:2px solid black">
 

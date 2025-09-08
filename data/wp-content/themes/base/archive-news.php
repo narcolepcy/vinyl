@@ -1,13 +1,16 @@
 <?php get_header(); ?>
 
 <?php
+
+$paged = get_query_var('paged')? get_query_var('paged') : 1;
 $tax = 'news_category';
 $current_term_id = is_tax($tax) ? (int) get_queried_object_id() : 0;
 
 // WP_Query（ターム指定があれば tax_query を付与）
 $args = array(
   'post_type'      => 'news',
-  'posts_per_page' => 10,
+  'posts_per_page' => 5,
+  'paged' => $paged,
   'orderby'        => 'date',
   'order'          => 'DESC',
 );
@@ -60,6 +63,12 @@ $terms = get_terms(array(
     </li>
   <?php endwhile; wp_reset_postdata(); ?>
 </ul>
+
+<?php
+if( function_exists('wp_pagenavi') ) {
+		wp_pagenavi(array('query' => $the_query));
+	}
+?>
 
 <?php endif; ?>
 <?php get_footer(); ?>
