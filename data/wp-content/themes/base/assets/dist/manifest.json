@@ -5,6 +5,15 @@
     "isEntry": true,
     "css": [
       "css/style.css"
+    ],
+    "assets": [
+      "images/fv_vector.svg",
+      "images/texture_b.jpg",
+      "images/fv_overlay.gif",
+      "images/fv_image.gif",
+      "images/heatmap_bg.jpg",
+      "images/bg2.gif",
+      "images/texture_w.jpg"
     ]
   }
 }

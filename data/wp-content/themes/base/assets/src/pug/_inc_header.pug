@@ -1,1 +1,21 @@
 header.p-header
+  .p-header__inner
+    a.p-header__logo(href="/")
+      img(src="/images/common/logo_header.svg" alt="VINYL")
+    nav.p-header__nav
+      ul.p-header__nav-list
+        li.p-header__nav-item.--active
+          a(href="/") top
+        li.p-header__nav-item
+          a(href="/lineup/") collection
+        li.p-header__nav-item
+          a(href="/comics/") comics
+        li.p-header__nav-item
+          a(href="/series/") series
+        li.p-header__nav-item
+          a(href="/news/") news
+        li.p-header__nav-item
+          a(href="/contact/") contact
+        li.p-header__nav-item.p-header__nav-item--sns
+          a(href="https://x.com/" target="_blank" rel="noopener noreferrer")
+            img(src="/images/common/icon_x.svg" alt="X")

@@ -1,0 +1,36 @@
+section.p-newUpload
+  .p-newUpload__header
+    .p-newUpload__header-line
+    .p-newUpload__header-labels
+      span.p-newUpload__header-label vinyl
+      span.p-newUpload__header-label.--right new upload
+    .p-newUpload__header-heading
+      span 新着配信シンプル見出し
+
+  .p-newUpload__decoration
+    img(src="/images/home/section_mask.svg" alt="")
+
+  .p-newUpload__list
+    each item, i in [{date: '2026.01.14', title: '作品タイトル作品タイトル', episode: '12話【タイトルタイトルタイトル】', isNew: true, links: [{label: '無料試し読み', url: '#'}]}, {date: '2026.07.14', title: '作品タイトル作品タイトル', episode: '12話【タイトルタイトルタイトル】', isNew: false, links: [{label: '無料試し読み', url: '#'}]}, {date: '2026.01.10', title: '作品タイトル作品タイトル', episode: '12話【タイトルタイトルタイトル】', isNew: false, links: [{label: 'amazon', url: '#', external: true}, {label: 'コミックシーモア', url: '#', external: true}]}, {date: '2026.01.09', title: '作品タイトル作品タイトル', episode: '12話【タイトルタイトルタイトル】', isNew: false, links: [{label: 'amazon', url: '#', external: true}, {label: 'コミックシーモア', url: '#', external: true}]}]
+      .p-newUpload__item
+        .p-newUpload__item-thumb
+          img(src=`/images/home/thumb_sample${i + 1}.png` alt="")
+          if item.isNew
+            .p-newUpload__item-badge NEW
+          .p-newUpload__item-new-icon
+            img(src="/images/home/new_badge.svg" alt="")
+        .p-newUpload__item-body
+          .p-newUpload__item-date= item.date
+          .p-newUpload__item-dateLine
+          .p-newUpload__item-title= item.title
+          .p-newUpload__item-episode= item.episode
+          .p-newUpload__item-episodeLine
+          .p-newUpload__item-links
+            each link in item.links
+              a.p-newUpload__item-link(href=link.url target=link.external ? '_blank' : false)
+                span= link.label
+                if link.external
+                  img.p-newUpload__item-link-arrow(src="/images/common/arrow_external.svg" alt="")
+
+  a.p-newUpload__btn(href="/series/")
+    span 単話配信作品一覧

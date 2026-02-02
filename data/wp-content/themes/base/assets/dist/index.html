@@ -33,26 +33,171 @@
   <meta name="description" content="ディスクリプション"/>
   <meta name="keywords" content="キーワード"/>
   <!-- ogp tags-->
-  <meta property="og:title" content="インデックス用に変更"/>
+  <meta property="og:title" content="VINYL - 漫画紹介サイト"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="インデックス用に変更"/>
+  <meta property="og:description" content="VINYLは漫画の紹介サイトです。"/>
   <meta property="og:url" content="test"/>
   <meta property="og:image" content="test"/>
-  <meta property="og:site_name" content="test"/>
-  <meta property="og:locale" content="test"/>
+  <meta property="og:site_name" content="VINYL"/>
+  <meta property="og:locale" content="ja_JP"/>
   <meta property="fb:admins" content="test"/>
   <meta property="fb:app_id" content="test"/>
   <script type="module" src="./js/main.tsx"></script>
 </head>
 <body class="home" id="top">
   <div id="wrap">
-    <header class="p-header"></header>
-    <div class="pl10">
-      <p>まずは「dev/sass/base/_setting.scss」で初期設定。</p>
-      <p>サイト全体の文字色・リンク色・行間・よく使う文字色定義をしよう。</p>
-      <p>breakpoint配列でbreakpointの追加も可能。</p>
-    </div>
-    <footer class="p-footer"></footer>
+    <header class="p-header">
+      <div class="p-header__inner"><a class="p-header__logo" href="/"><img src="/images/common/logo_header.svg" alt="VINYL"/></a>
+        <nav class="p-header__nav">
+          <ul class="p-header__nav-list">
+            <li class="p-header__nav-item --active"><a href="/">top</a></li>
+            <li class="p-header__nav-item"><a href="/lineup/">collection</a></li>
+            <li class="p-header__nav-item"><a href="/comics/">comics</a></li>
+            <li class="p-header__nav-item"><a href="/series/">series</a></li>
+            <li class="p-header__nav-item"><a href="/news/">news</a></li>
+            <li class="p-header__nav-item"><a href="/contact/">contact</a></li>
+            <li class="p-header__nav-item p-header__nav-item--sns"><a href="https://x.com/" target="_blank" rel="noopener noreferrer"><img src="/images/common/icon_x.svg" alt="X"/></a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="p-home">
+      <section class="p-fv">
+        <div class="p-fv__bg">
+          <div class="p-fv__bg-color"></div>
+          <div class="p-fv__bg-vector"></div>
+          <div class="p-fv__bg-texture"></div>
+          <div class="p-fv__bg-overlay"></div>
+          <div class="p-fv__bg-image"></div>
+        </div>
+        <div class="p-fv__content">
+          <div class="p-fv__visual">
+            <div class="p-fv__visual-frame"></div>
+            <div class="p-fv__visual-img"><img src="/images/home/fv_main_img.png" alt=""/></div>
+          </div>
+          <div class="p-fv__info">
+            <p class="p-fv__info-author">ヒズ・リトル・アンバー／ナツメカズキ</p>
+          </div>
+          <div class="p-fv__star"><img src="/images/home/star.gif" alt=""/></div>
+          <div class="p-fv__logo"><img src="/images/home/logo_fv.gif" alt="VINYL"/></div>
+          <div class="p-fv__copyright">
+            <p>Copyright © 2021 Kobunsha Co,Ltd. All Rights Reserved.</p>
+          </div>
+          <div class="p-fv__scroll">
+            <div class="p-fv__scroll-bar">
+              <div class="p-fv__scroll-indicator"></div>
+            </div>
+            <div class="p-fv__scroll-current">01</div>
+            <div class="p-fv__scroll-total">05</div>
+          </div>
+        </div>
+      </section>
+      <section class="p-collection">
+        <div class="p-collection__bg">
+          <div class="p-collection__bg-texture"></div>
+          <div class="p-collection__bg-heatmap"></div>
+          <div class="p-collection__bg-overlay"></div>
+        </div>
+        <div class="p-collection__content"><a class="p-collection__btn" href="/lineup/"><span>vinyl 作品一覧はこちら</span></a></div>
+      </section>
+      <section class="p-newUpload">
+        <div class="p-newUpload__header">
+          <div class="p-newUpload__header-line"></div>
+          <div class="p-newUpload__header-labels"><span class="p-newUpload__header-label">vinyl</span><span class="p-newUpload__header-label --right">new upload</span></div>
+          <div class="p-newUpload__header-heading"><span>新着配信シンプル見出し</span></div>
+        </div>
+        <div class="p-newUpload__decoration"><img src="/images/home/section_mask.svg" alt=""/></div>
+        <div class="p-newUpload__list">
+          <div class="p-newUpload__item">
+            <div class="p-newUpload__item-thumb"><img src="/images/home/thumb_sample1.png" alt=""/>
+              <div class="p-newUpload__item-badge">NEW</div>
+              <div class="p-newUpload__item-new-icon"><img src="/images/home/new_badge.svg" alt=""/></div>
+            </div>
+            <div class="p-newUpload__item-body">
+              <div class="p-newUpload__item-date">2026.01.14</div>
+              <div class="p-newUpload__item-dateLine"></div>
+              <div class="p-newUpload__item-title">作品タイトル作品タイトル</div>
+              <div class="p-newUpload__item-episode">12話【タイトルタイトルタイトル】</div>
+              <div class="p-newUpload__item-episodeLine"></div>
+              <div class="p-newUpload__item-links"><a class="p-newUpload__item-link" href="#"><span>無料試し読み</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="p-newUpload__item">
+            <div class="p-newUpload__item-thumb"><img src="/images/home/thumb_sample2.png" alt=""/>
+              <div class="p-newUpload__item-new-icon"><img src="/images/home/new_badge.svg" alt=""/></div>
+            </div>
+            <div class="p-newUpload__item-body">
+              <div class="p-newUpload__item-date">2026.07.14</div>
+              <div class="p-newUpload__item-dateLine"></div>
+              <div class="p-newUpload__item-title">作品タイトル作品タイトル</div>
+              <div class="p-newUpload__item-episode">12話【タイトルタイトルタイトル】</div>
+              <div class="p-newUpload__item-episodeLine"></div>
+              <div class="p-newUpload__item-links"><a class="p-newUpload__item-link" href="#"><span>無料試し読み</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="p-newUpload__item">
+            <div class="p-newUpload__item-thumb"><img src="/images/home/thumb_sample3.png" alt=""/>
+              <div class="p-newUpload__item-new-icon"><img src="/images/home/new_badge.svg" alt=""/></div>
+            </div>
+            <div class="p-newUpload__item-body">
+              <div class="p-newUpload__item-date">2026.01.10</div>
+              <div class="p-newUpload__item-dateLine"></div>
+              <div class="p-newUpload__item-title">作品タイトル作品タイトル</div>
+              <div class="p-newUpload__item-episode">12話【タイトルタイトルタイトル】</div>
+              <div class="p-newUpload__item-episodeLine"></div>
+              <div class="p-newUpload__item-links"><a class="p-newUpload__item-link" href="#" target="_blank"><span>amazon</span><img class="p-newUpload__item-link-arrow" src="/images/common/arrow_external.svg" alt=""/></a><a class="p-newUpload__item-link" href="#" target="_blank"><span>コミックシーモア</span><img class="p-newUpload__item-link-arrow" src="/images/common/arrow_external.svg" alt=""/></a>
+              </div>
+            </div>
+          </div>
+          <div class="p-newUpload__item">
+            <div class="p-newUpload__item-thumb"><img src="/images/home/thumb_sample4.png" alt=""/>
+              <div class="p-newUpload__item-new-icon"><img src="/images/home/new_badge.svg" alt=""/></div>
+            </div>
+            <div class="p-newUpload__item-body">
+              <div class="p-newUpload__item-date">2026.01.09</div>
+              <div class="p-newUpload__item-dateLine"></div>
+              <div class="p-newUpload__item-title">作品タイトル作品タイトル</div>
+              <div class="p-newUpload__item-episode">12話【タイトルタイトルタイトル】</div>
+              <div class="p-newUpload__item-episodeLine"></div>
+              <div class="p-newUpload__item-links"><a class="p-newUpload__item-link" href="#" target="_blank"><span>amazon</span><img class="p-newUpload__item-link-arrow" src="/images/common/arrow_external.svg" alt=""/></a><a class="p-newUpload__item-link" href="#" target="_blank"><span>コミックシーモア</span><img class="p-newUpload__item-link-arrow" src="/images/common/arrow_external.svg" alt=""/></a>
+              </div>
+            </div>
+          </div>
+        </div><a class="p-newUpload__btn" href="/series/"><span>単話配信作品一覧</span></a>
+      </section>
+    </main>
+    <footer class="p-footer">
+      <div class="p-footer__bg"></div>
+      <div class="p-footer__content">
+        <div class="p-footer__logo"><img src="/images/home/logo_vinyl_large.svg" alt="VINYL"/></div>
+        <p class="p-footer__catchcopy">キャッチコピーなし</p>
+        <p class="p-footer__copyright">Copyright © 2021 Kobunsha Co,Ltd. All Rights Reserved.</p>
+        <div class="p-footer__partners">
+          <div class="p-footer__partner"><img src="/images/common/logo_vinyl_footer.png" alt="Vinyl"/></div>
+          <div class="p-footer__partner"><img src="/images/common/logo_kobunsha.png" alt="光文社"/></div>
+          <div class="p-footer__partner p-footer__partner--x"><img src="/images/common/icon_x.svg" alt="X"/></div>
+        </div>
+        <div class="p-footer__line"></div>
+        <nav class="p-footer__nav">
+          <ul class="p-footer__nav-list">
+            <li class="p-footer__nav-item"><a href="/">top</a></li>
+            <li class="p-footer__nav-item"><a href="/lineup/">collection</a></li>
+            <li class="p-footer__nav-item"><a href="/comics/">comics</a></li>
+            <li class="p-footer__nav-item"><a href="/series/">series</a></li>
+            <li class="p-footer__nav-item"><a href="/contact/">contact</a></li>
+            <li class="p-footer__nav-item"><a href="/news/">news</a></li>
+          </ul>
+        </nav>
+        <div class="p-footer__bottom">
+          <div class="p-footer__abj"><img src="/images/common/abj_mark.png" alt="ABJマーク"/>
+            <p class="p-footer__abj-text">ABJマークは、この電子書店・電子書籍配信サービスが、著作権者からコンテンツ使用許諾を得た正規版配信サービスであることを示す登録商標（登録番号 第6091713号）です。</p>
+          </div>
+          <p class="p-footer__notice">イラスト等のすべてのコンテンツの無断複写・転載を禁じます。</p>
+        </div>
+      </div>
+    </footer>
   </div>
 </body></html>
 </html>
